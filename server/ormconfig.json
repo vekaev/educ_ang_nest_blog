@@ -1,0 +1,20 @@
+{
+  "type": "mysql",
+  "host": "localhost",
+  "port": 3306,
+  "username": "root",
+  "password": "rootroot",
+  "database": "educ_ang_nest_blog",
+  "entities": ["dist/**/*.entity{.ts,.js}"],
+  "dropSchema": false,
+  "synchronize": true,
+  "migrationsRun": false,
+  "logging": false,
+  "migrations": [
+    "dist/modules/**/db/migrations/*{.ts,.js}",
+    "dist/src/**/db/migrations/*{.ts,.js}"
+  ],
+  "cli": {
+    "migrationsDir": "db/migrations"
+  }
+}
