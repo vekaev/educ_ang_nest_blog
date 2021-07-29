@@ -10,5 +10,11 @@ export class AdminLoginFormUiComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const formData = {
+      accountInformation: {
+
+      }
+    }
+  }
 }
