@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-admin-login-form-ui',
@@ -6,15 +7,26 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./admin-login-form-ui.component.scss'],
 })
 export class AdminLoginFormUiComponent implements OnInit {
+  formGroup!: FormGroup;
+
   @Input() formError = '';
+  @Input() disabled: boolean = false;
+  @Output() login = new EventEmitter();
 
   constructor() {}
 
   ngOnInit(): void {
-    const formData = {
-      accountInformation: {
+    this.formGroup = new FormGroup({
+      login: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required]),
+    });
+  }
 
-      }
-    }
+  onFormChange(): void {
+    this.formError = '';
+  }
+
+  onSubmit(): void {
+    this.login.emit(this.formGroup.value);
   }
 }

@@ -7,10 +7,11 @@ import { MatDividerModule } from '@angular/material/divider';
 
 import { AdminLoginFormUiComponent } from './ui/admin-login-form-ui/admin-login-form-ui.component';
 import { AdminLoginBlockComponent } from './blocks/admin-login-block/admin-login-block.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AdminLoginFormUiComponent, AdminLoginBlockComponent],
-  imports: [CommonModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatDividerModule],
+  imports: [CommonModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatDividerModule, ReactiveFormsModule],
   exports: [AdminLoginBlockComponent],
 })
 export class AdminLoginBlockModule {}
